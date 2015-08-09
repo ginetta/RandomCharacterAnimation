@@ -1,0 +1,38 @@
+{
+  "name": "helloworld.js",
+  "version": "1.0.0",
+  "description": "A Vanilla JS plugin that generates random text effect. ",
+  "main": "main.js",
+  "dependencies": {
+    "browser-sync": "^2.8.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanderlanth/HelloWorld.js.git"
+  },
+  "keywords": [
+    "Hello",
+    "World",
+    "Vanilla",
+    "JS",
+    "Plugin",
+    "random",
+    "text",
+    "generator",
+    "matrix"
+  ],
+  "author": "Nicolas Lanthemann aka. Vanderlanth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vanderlanth/HelloWorld.js/issues"
+  },
+  "homepage": "https://github.com/vanderlanth/HelloWorld.js#readme"
+}

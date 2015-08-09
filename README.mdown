@@ -1,0 +1,3 @@
+# HelloWorld.JS
+Documentation is coming. During this time, go check the codepen demo of
+[HelloWorld.js](http://codepen.io/vanderlanth/full/NqJdOp "HelloWorld.js").

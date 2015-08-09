@@ -1,0 +1,22 @@
+{
+  "name": "helloworld.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/vanderlanth/HelloWorld.js",
+  "authors": [
+    "vanderlanth <vanderlanth@gmail.com>"
+  ],
+  "description": "A Vanilla JS Plugin that generates random text effect",
+  "main": "main.js",
+  "keywords": [
+    "Hello",
+    "World",
+    "Plugin",
+    "Vanilla",
+    "JS",
+    "random",
+    "text",
+    "generator",
+    "matrix"
+  ],
+  "license": "MIT"
+}
