@@ -1,3 +1,212 @@
 # HelloWorld.JS
-Documentation is coming. During this time, go check the codepen demo of
-[HelloWorld.js](http://codepen.io/vanderlanth/full/NqJdOp "HelloWorld.js").
+<!-- Documentation is coming. During this time, go check the codepen demo of
+[HelloWorld.js](http://codepen.io/vanderlanth/full/NqJdOp "HelloWorld.js"). -->
+
+HelloWorld is a Vanilla JS plugin that generates random text effect. This docs
+contains the explanations about the installation of the plugin, the public
+functions and the parameters. By the way, you will learn how to use it with some
+example. Feel free to use it and be creative !
+
+First here's a [demo](http://codepen.io/vanderlanth/full/NqJdOp "HelloWorld.js")
+of HelloWorld.js
+
+
+## Installation
+
+1. Download / Clone the project
+2. Open your terminal
+3. Go to the path of the project
+4. npm install
+5. Have fun !
+
+```
+npm install
+```
+
+## New RandomCharacterAnimation
+
+```
+var yourVar = new RandomCharacterAnimation({
+    //parameters
+});
+
+yourVar.start();
+```
+
+## Parameters
+
+There is some defaults parameters, you can change them if you want.
+
+```
+var yourVar = new RandomCharacterAnimation({
+    //these are the default settings
+    d_element   : '',
+    d_type      : 'char',
+    d_min       : 10,
+    d_max       : 100,
+    d_kerning   : 10,
+});
+
+```
+
+#### d_element
+
+It's the element you want to animate. You just have to write the class name of
+the element, for example :
+
+```
+d_element   : '.random'
+```
+By the way it's the only one parameter which is obligatory.
+
+#### d_type
+
+The type of character you want to use for the generate effect. You can
+choose between :
+
+- 'char' (default) who contains almost all the letters from a computer keyboard.
+- 'int' who generates characters between 0 and 9.
+- var yourVariable if you want some specific letters. It can be an array, but a
+String enough.
+
+For example:
+```
+var myArray = 'pizzatime';
+
+var yourVar = new RandomCharacterAnimation({
+    d_element   : '.pizzeria',
+    d_type      : myArray
+});
+```
+
+#### d_min and d_max
+
+It's corresponds with the length of the animation. Every letter have a random
+number between d_min and d_max then a counter is create with a
+requestAnimationFrame and if the counter is bigger than the random of a letter,
+this letter will get the original letter until the end of the animation.
+
+#### d_kerning
+
+It's the letter-spacing of the element, this parameter is exponential so don't
+be afraid by big number. You can try make the animations with something like,
+almost all webfonts ?
+
+## Public functions
+
+Here's some explanations about the public functions and about how the plugin
+works by the way.
+
+### start
+
+It's the main function. First, it takes the length of the selected element. Then
+the function create a *span* element for letters and set some padding between each
+of them. After that the function set the random number for each letter.
+this._convertStringToArray() is useful to convert your own variable in an array
+if you want some specific character. So you don't have to write an array.
+
+Then the animations can start for real with this._loop() which generates the
+random character and check the number of each letter with a counter to switch
+between the random character and the official character.
+
+```
+start: function() {
+
+    this._getElementSize();
+    this._setStructure();
+    this._setKerning();
+    this._setChange();
+    this._convertStringToArray();
+
+    this._loop();
+
+}
+```
+
+### restart
+
+If the animation is over, who can use restart to launch the animation again.
+You can use the restart function with an event like a mouseover or when the user
+press a specific key, just be creative.
+
+### stop
+
+This function just stop the RequestAnimationFrame when the animation is over.
+
+
+## Example
+
+Here's a part of the code you can have in the demo. It's very useful if you
+want to animate some elements in the same level in the DOM. So here's an example
+with a list of link with some hover.
+
+```
+// create a table and just put every parameters you need.
+var animations = [
+    {
+        d_element   : '.Linkedin',
+        d_min       : 25,
+        d_max       : 50,
+    },
+    {
+        d_element   : '.Dribbble',
+        d_min       : 25,
+        d_max       : 50,
+    },
+    {
+        d_element   : '.Behance',
+        d_min       : 25,
+        d_max       : 50,
+    },
+    {
+        d_element   : '.Codepen',
+        d_min       : 25,
+        d_max       : 50,
+    },
+    {
+        d_element   : '.Github',
+        d_min       : 25,
+        d_max       : 50,
+    }
+]
+
+//then put each item of the table in a new RandomCharacterAnimation
+and push it in an array.
+var obj = [];
+
+for (var optionsAnim in animations) {
+    var random = new RandomCharacterAnimation(animations[optionsAnim]);
+    random.start();
+    obj.push(random);
+}
+
+
+//this function will get the index of the element when you call it.
+function getIndexOfElementInParent(element){
+    var parent = element.parentNode;
+    for (var index = 0; index <= parent.children.length - 1; index++){
+        if(parent.children[index] === element){
+            return index;
+        }
+    }
+};
+
+//this function can create some events, so here the function call
+getIndexOfElementInParent when there is an event and create the animation
+with .restart() on this element.
+function newEvent(selected_element_class, _event){
+    var items = document.querySelectorAll(selected_element_class);
+    for (var i = 0; i <= items.length - 1; i++){
+        items.item(i).addEventListener(_event, function(event) {
+            var currentItemIndex = getIndexOfElementInParent(event.target.parentNode)
+            obj[currentItemIndex].restart();
+        }, false);
+    }
+};
+
+//just call the function
+newEvent('.item-link','mouseenter');
+```
+
+Thank you for your attention, feel free to share it and/or use it like if you
+were in the matrix.

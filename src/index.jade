@@ -1,9 +1,22 @@
+mixin list-item(link, title)
+    li.list-item
+        a.item-link(class=title href=link target='blank')= title
+
 doctype html
 html(lang="en")
     head
-        title = HelloWorld
+        title Hello World JS
+        link(rel='shortcut icon', href='../src/favicon.png', type='image/png')
+        link(rel='icon' href="../src/favicon.png" type="image/png")
         link(href='main.css', rel='stylesheet')
     body
         div.content
-            h1.random hello world
+            h1.random hello world.js
+        div.social
+            ul#social-list
+                +list-item('https://ch.linkedin.com/in/vanderlanth', 'Linkedin')
+                +list-item('https://dribbble.com/van_der_lanth', 'Dribbble')
+                +list-item('https://www.behance.net/vanderlanth', 'Behance')
+                +list-item('http://codepen.io/vanderlanth/', 'Codepen')
+                +list-item('https://github.com/vanderlanth', 'Github')
         script(async src='main.js')
