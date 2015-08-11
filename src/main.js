@@ -329,7 +329,7 @@ RandomCharacterAnimation.prototype = {
 	this.requestId = requestAnimationFrame(function() {
 			self._loop();
 
-			if (self.currentChange > self.options.d_max) {
+			if (self.currentChange > self.options.d_max*1.5) {
 					self.stop();
 			}
 
@@ -394,10 +394,11 @@ RandomCharacterAnimation.prototype = {
 // Single Usage - If you define the animation only for one element
 var title = new RandomCharacterAnimation({
 	d_element 	: '.random',
-	d_kerning 	: 8000,
+	d_kerning 	: 4000,
 });
 
 title.start();
+
 
 /**
  * @example
@@ -406,41 +407,41 @@ title.start();
  */
 
 // Multiple Usage - For example for list
-var animations = [
-	{
-		d_element 	: '.Linkedin',
-		d_min 		: 25,
-		d_max		: 50,
-	},
-	{
-		d_element 	: '.Dribbble',
-		d_min 		: 25,
-		d_max		: 50,
-	},
-	{
-		d_element 	: '.Behance',
-		d_min 		: 25,
-		d_max		: 50,
-	},
-	{
-		d_element 	: '.Codepen',
-		d_min 		: 25,
-		d_max		: 50,
-	},
-	{
-		d_element 	: '.Github',
-		d_min 		: 25,
-		d_max		: 50,
-	}
-]
+// var animations = [
+// 	{
+// 		d_element 	: '.Linkedin',
+// 		d_min 		: 25,
+// 		d_max		: 50,
+// 	},
+// 	{
+// 		d_element 	: '.Dribbble',
+// 		d_min 		: 25,
+// 		d_max		: 50,
+// 	},
+// 	{
+// 		d_element 	: '.Behance',
+// 		d_min 		: 25,
+// 		d_max		: 50,
+// 	},
+// 	{
+// 		d_element 	: '.Codepen',
+// 		d_min 		: 25,
+// 		d_max		: 50,
+// 	},
+// 	{
+// 		d_element 	: '.Github',
+// 		d_min 		: 25,
+// 		d_max		: 50,
+// 	}
+// ]
 
-var obj = [];
+// var obj = [];
 
-for (var optionsAnim in animations) {
-	var random = new RandomCharacterAnimation(animations[optionsAnim]);
-	random.start();
-	obj.push(random);
-}
+// for (var optionsAnim in animations) {
+// 	var random = new RandomCharacterAnimation(animations[optionsAnim]);
+// 	random.start();
+// 	obj.push(random);
+// }
 
 /**
  * @function getIndexOfElementInParent
@@ -452,34 +453,34 @@ for (var optionsAnim in animations) {
  *
  */
 
-function getIndexOfElementInParent(element){
-	var parent = element.parentNode;
-	for (var index = 0; index <= parent.children.length - 1; index++){
-		if(parent.children[index] === element){
-			return index;
-		}
-	}
-};
+// function getIndexOfElementInParent(element){
+// 	var parent = element.parentNode;
+// 	for (var index = 0; index <= parent.children.length - 1; index++){
+// 		if(parent.children[index] === element){
+// 			return index;
+// 		}
+// 	}
+// };
 
-/**
- * @function newEvent
- * @param selected_element_class 	| this is too obvious, and it's a string.
- * @param _event 					| event, for example 'mouseenter'
- * @description this function is just an example. Feel free to
- * create your own function
- * @public
- *
- */
+// *
+//  * @function newEvent
+//  * @param selected_element_class 	| this is too obvious, and it's a string.
+//  * @param _event 					| event, for example 'mouseenter'
+//  * @description this function is just an example. Feel free to
+//  * create your own function
+//  * @public
+//  *
 
-function newEvent(selected_element_class, _event){
-	var items = document.querySelectorAll(selected_element_class);
-	for (var i = 0; i <= items.length - 1; i++){
-		items.item(i).addEventListener(_event, function(event) {
-			// call getIndexOfElementInParent
-			var currentItemIndex = getIndexOfElementInParent(event.target.parentNode)
-			obj[currentItemIndex].restart();
-		}, false);
-	}
-};
 
-newEvent('.item-link','mouseenter');
+// function newEvent(selected_element_class, _event){
+// 	var items = document.querySelectorAll(selected_element_class);
+// 	for (var i = 0; i <= items.length - 1; i++){
+// 		items.item(i).addEventListener(_event, function(event) {
+// 			// call getIndexOfElementInParent
+// 			var currentItemIndex = getIndexOfElementInParent(event.target.parentNode)
+// 			obj[currentItemIndex].restart();
+// 		}, false);
+// 	}
+// };
+
+// newEvent('.item-link','mouseenter');

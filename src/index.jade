@@ -1,7 +1,3 @@
-mixin list-item(link, title)
-    li.list-item
-        a.item-link(class=title href=link target='blank')= title
-
 doctype html
 html(lang="en")
     head
@@ -11,12 +7,5 @@ html(lang="en")
         link(href='main.css', rel='stylesheet')
     body
         div.content
-            h1.random hello world.js
-        div.social
-            ul#social-list
-                +list-item('https://ch.linkedin.com/in/vanderlanth', 'Linkedin')
-                +list-item('https://dribbble.com/van_der_lanth', 'Dribbble')
-                +list-item('https://www.behance.net/vanderlanth', 'Behance')
-                +list-item('http://codepen.io/vanderlanth/', 'Codepen')
-                +list-item('https://github.com/vanderlanth', 'Github')
+            h1.random Thank you for downloading
         script(async src='main.js')

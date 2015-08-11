@@ -26,51 +26,6 @@ html, body{
 			cursor: pointer;
 		}
 	}
-	.social{
-		position: absolute;
-		bottom: 30px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 600px;
-		text-align: center;
-		#social-list{
-
-		}
-	}
-	.list-item{
-		display: inline-block;
-		width: 120px;
-		text-align: center;
-		.item-link{
-			font-size: 12px;
-			text-decoration: none;
-			color: #7F7F7F;
-			transition: .3s ease-out all;
-			&:focus{
-				outline: none;
-			}
-			&:after{
-				content: "";
-				position: relative;
-				width: 0;
-				height: 1px;
-				display: block;
-				z-index: 100;
-				background-color: #7F7F7F;
-				transition: .3s ease-out all;
-				left: 50%;
-				top: 5px;
-				transform: translateX(-50%);
-
-			}
-			&:hover{
-				color: #eee;
-			}
-			&:hover:after{
-				width: 50px;
-			}
-		}
-	}
 }
 
 .randomCharacter{
