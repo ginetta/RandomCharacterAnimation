@@ -213,10 +213,10 @@ RandomCharacterAnimation.prototype = {
 		for (i = 0; i < this.getLettersArray.length; i++) {
 			j = i + 1; //hack
 			thisContainer = elem.querySelector('.randomCharacter:nth-child(' + j + ')');
-			thisContainer.style.padding = '0' + (Math.sqrt(kerning) / thisContainer.offsetWidth) + 'px';
+			thisContainer.style.padding = (Math.sqrt(kerning) / thisContainer.offsetWidth)-2 + 'px';
 			kerningSize = thisContainer.offsetWidth;
 			this.kerningSize.push(kerningSize);
-			thisContainer.style.width = kerningSize + 'px';
+			thisContainer.style.width = kerningSize+(Math.sqrt(kerningSize)) + 'px';
 		}
 	},
 
@@ -390,6 +390,14 @@ RandomCharacterAnimation.prototype = {
 
 };
 
+
+// var yourVar = new RandomCharacterAnimation({
+//     //parameters
+//     d_element : '.random',
+//     d_kerning : 1650
+// });
+
+// yourVar.start();
 
 /**
  * @example
