@@ -6,7 +6,11 @@
     "vanderlanth <nicolaslanthemann@gmail.com>"
   ],
   "description": "A Vanilla JS plugin that generates random text effect.",
-  "main": "main.js",
+  "main": [
+    "src/main.js",
+    "src/main.scss"
+    "src/index.html"
+  ],
   "keywords": [
     "vanilla",
     "js",
