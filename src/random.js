@@ -391,15 +391,6 @@ RandomCharacterAnimation.prototype = {
 };
 
 
-// Single Usage - If you define the animation only for one element
-var title = new RandomCharacterAnimation({
-	d_element 	: '.random',
-	d_kerning 	: 4000,
-});
-
-title.start();
-
-
 /**
  * @example
  * @description usage of the plugin with a list of element in the same level
