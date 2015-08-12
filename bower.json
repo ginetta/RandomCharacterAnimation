@@ -1,10 +1,13 @@
 {
-  "name": "helloworld.js",
+  "name": "RandomCharacterAnimation",
   "version": "1.0.0",
-  "homepage": "https://github.com/vanderlanth/HelloWorld.js",
   "authors": [
     "vanderlanth <nicolaslanthemann@gmail.com>"
   ],
+  "repository": {
+  "type": "git",
+  "url": "git@github.com:vanderlanth/HelloWorld.js.git"
+},
   "description": "A Vanilla JS plugin that generates random text effect.",
   "main": [
     "src/main.js",
