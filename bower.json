@@ -5,13 +5,13 @@
     "vanderlanth <nicolaslanthemann@gmail.com>"
   ],
   "repository": {
-  "type": "git",
-  "url": "git@github.com:vanderlanth/RandomCharacterAnimation.git"
-},
+    "type": "git",
+    "url": "git@github.com:vanderlanth/RandomCharacterAnimation.git"
+  },
   "description": "A Vanilla JS plugin that generates random text effect.",
   "main": [
     "src/main.js",
-    "src/main.scss"
+    "src/main.scss",
     "src/index.html"
   ],
   "keywords": [
