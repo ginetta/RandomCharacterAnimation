@@ -470,7 +470,6 @@ RandomCharacterAnimation.prototype = {
 //  * @public
 //  *
 
-
 // function newEvent(selected_element_class, _event){
 // 	var items = document.querySelectorAll(selected_element_class);
 // 	for (var i = 0; i <= items.length - 1; i++){
@@ -481,5 +480,4 @@ RandomCharacterAnimation.prototype = {
 // 		}, false);
 // 	}
 // };
-
 // newEvent('.item-link','mouseenter');
