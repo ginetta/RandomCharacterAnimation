@@ -213,10 +213,15 @@ RandomCharacterAnimation.prototype = {
 		for (i = 0; i < this.getLettersArray.length; i++) {
 			j = i + 1; //hack
 			thisContainer = elem.querySelector('.randomCharacter:nth-child(' + j + ')');
-			thisContainer.style.padding = (Math.sqrt(kerning) / thisContainer.offsetWidth)-2 + 'px';
-			kerningSize = thisContainer.offsetWidth;
+			kerningSize = thisContainer.clientWidth;
+			thisContainer.style.padding = (Math.sqrt(kerning)) + 'px';
 			this.kerningSize.push(kerningSize);
-			thisContainer.style.width = kerningSize+(Math.sqrt(kerningSize)) + 'px';
+			thisContainer.style.width = (kerningSize/1.1111) + 'px';
+			//special code hack
+			if (thisContainer.innerHTML === 'm'){
+				thisContainer.style.paddingRight = (Math.sqrt(kerning*5)) + 'px';
+				thisContainer.style.paddingLeft = (Math.sqrt(kerning*2)) + 'px';
+			}
 		}
 	},
 
@@ -470,6 +475,7 @@ RandomCharacterAnimation.prototype = {
 //  * @public
 //  *
 
+
 // function newEvent(selected_element_class, _event){
 // 	var items = document.querySelectorAll(selected_element_class);
 // 	for (var i = 0; i <= items.length - 1; i++){
@@ -480,4 +486,5 @@ RandomCharacterAnimation.prototype = {
 // 		}, false);
 // 	}
 // };
+
 // newEvent('.item-link','mouseenter');
