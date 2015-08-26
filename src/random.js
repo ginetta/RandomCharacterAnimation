@@ -216,11 +216,15 @@ RandomCharacterAnimation.prototype = {
 			kerningSize = thisContainer.clientWidth;
 			thisContainer.style.padding = (Math.sqrt(kerning)) + 'px';
 			this.kerningSize.push(kerningSize);
-			thisContainer.style.width = (kerningSize/1.1111) + 'px';
-			//special code hack
+			thisContainer.style.width = (kerningSize) + 'px';
+			//special hack
+			if (thisContainer.innerHTML === 'i' || thisContainer.innerHTML === 'l' || thisContainer.innerHTML === 'p' || thisContainer.innerHTML === 'f' || thisContainer.innerHTML === 's'){
+				thisContainer.style.paddingRight = (Math.sqrt(kerning*0.3)) + 'px';
+				thisContainer.style.paddingLeft = (Math.sqrt(kerning*0.3)) + 'px';
+			}
 			if (thisContainer.innerHTML === 'm'){
-				thisContainer.style.paddingRight = (Math.sqrt(kerning*5)) + 'px';
-				thisContainer.style.paddingLeft = (Math.sqrt(kerning*2)) + 'px';
+				thisContainer.style.paddingRight = (Math.sqrt(kerning*1.2)) + 'px';
+				//thisContainer.style.paddingLeft = (Math.sqrt(kerning*0.1)) + 'px';
 			}
 		}
 	},
