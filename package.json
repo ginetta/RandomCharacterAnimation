@@ -1,5 +1,5 @@
 {
-  "name": "helloworld.js",
+  "name": "RandomCharacterAnimation",
   "version": "1.0.0",
   "description": "A Vanilla JS plugin that generates random text effect.",
   "main": "main.js",

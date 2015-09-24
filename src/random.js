@@ -71,7 +71,7 @@
  * @example							| 'px', '%', 'rem', 'pizza', 'em'
  *
  */
-var RandomCharacterAnimation = function(options) {
+var RandomCharacterAnimation = module.exports = function(options) {
 
 /**
  * @default value for each parameters
